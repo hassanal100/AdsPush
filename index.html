@@ -41,7 +41,7 @@
     }
 
     .logo {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
       color: #00a8ff;
       margin-bottom: 15px;
@@ -125,6 +125,18 @@
       font-weight: 600;
       text-shadow: 0 0 5px rgba(0,168,255,0.6);
     }
+
+    .price-card p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00a8ff;
+    }
+
+    .price-card span {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -139,12 +151,17 @@
 
     <div class="price-card">
       <h3>Kifurushi cha Wiki</h3>
-      <p><span class="highlight">TSH 2,500</span></p>
+      <p><span class="highlight">KES 160</span></p>
+    </div>
+
+    <div class="price-card">
+      <h3>Kifurushi cha Wiki Mbili</h3>
+      <p><span class="highlight">KES 300</span></p>
     </div>
 
     <div class="price-card">
       <h3>Kifurushi cha Mwezi</h3>
-      <p><span class="highlight">TSH 5,000</span></p>
+      <p><span class="highlight">KES 600</span></p>
     </div>
 
     <div class="number">
@@ -152,7 +169,7 @@
       Jina: <span class="highlight">AHADI MWAMONDO</span>
     </div>
 
-    <button class="copy-btn" onclick="copyNumber()">📋 Nakili Namba ya Malipo</button>
+    <button class="copy-btn" onclick="copyNumber()">📋 Copy Payment Number</button>
 
     <div class="footer">
       <p><b>Soka TV Max</b> – Tunakufungulia Dunia </p>
@@ -163,7 +180,7 @@
     function copyNumber() {
       const number = document.getElementById('payNumber').innerText;
       navigator.clipboard.writeText(number);
-      alert("✅ Namba ya Malipo imenakiliwa: " + number);
+      alert("✅ Payment Number Copied: " + number);
     }
   </script>
 </body>
