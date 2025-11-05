@@ -34,25 +34,61 @@
   <style>
     * { font-family: 'Poppins', system-ui; scroll-behavior: smooth; }
     body { background: radial-gradient(circle at top, #101820, #05080c); }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe5d;
+    }
+
+    /* Mobile Responsiveness Fix */
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 
 <body class="min-h-screen flex items-center justify-center text-white px-4 sm:px-6 py-10">
 
-  <!-- Container -->
-  <div class="bg-card rounded-3xl shadow-glow p-5 sm:p-8 max-w-md w-full animate-fade">
+  <!-- Main Container -->
+  <div class="bg-card rounded-3xl shadow-glow p-6 sm:p-8 max-w-md w-full animate-fade">
 
     <!-- Header -->
-    <div class="text-center mb-6">
-      <img src="https://i.ibb.co/93yWms0Z/1761516485754.jpg" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto shadow-glow mb-3" alt="Soka TV Max" />
-      <h1 class="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-accent1 to-accent2 bg-clip-text text-transparent">
+    <div class="text-center mb-8">
+      <img src="https://i.ibb.co/93yWms0Z/1761516485754.jpg"
+           class="w-24 h-24 sm:w-28 sm:h-28 rounded-full mx-auto shadow-glow mb-4" alt="Soka TV Max" />
+      <h1 class="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-accent1 to-accent2 bg-clip-text text-transparent">
         ⚽ Soka TV Max
       </h1>
-      <p class="text-xs sm:text-sm text-gray-300 mt-1">Tunakufungulia Dunia ya Burudani 🌍</p>
+      <p class="text-sm sm:text-base text-gray-300 mt-2">Tunakufungulia Dunia ya Burudani 🌍</p>
     </div>
 
     <!-- Description -->
-    <p class="text-gray-300 text-center text-xs sm:text-sm leading-relaxed mb-6">
+    <p class="text-gray-300 text-center text-sm sm:text-base leading-relaxed mb-8">
       Habari Mpendwa Mteja 👋<br />
       Tafadhali lipia kifurushi chako ili uweze kutazama channel zote ndani ya App yetu.<br /><br />
       Baada ya malipo, utapokea
@@ -61,43 +97,46 @@
     </p>
 
     <!-- Packages -->
-    <div class="space-y-4">
-      <div class="bg-maxbg/60 rounded-2xl p-4 text-center shadow-glow hover:scale-105 transition">
-        <h3 class="text-base sm:text-lg font-semibold">📦 Kifurushi cha Wiki</h3>
-        <p class="text-2xl sm:text-3xl font-extrabold text-accent2 mt-2">TSH 2,500</p>
-        <button class="mt-3 w-full py-2 bg-gradient-to-r from-accent1 to-accent2 rounded-xl text-white font-semibold text-sm sm:text-base shadow-glow hover:scale-105 transition">
-         Furahia OFA hii Sasa
+    <div class="space-y-6">
+      <div class="bg-maxbg/60 rounded-2xl p-5 text-center shadow-glow hover:scale-105 transition-transform duration-200">
+        <h3 class="text-lg sm:text-xl font-semibold">📦 Kifurushi cha Wiki</h3>
+        <p class="text-3xl sm:text-4xl font-extrabold text-accent2 mt-3">TSH 2,500</p>
+        <button class="mt-4 w-full py-2.5 bg-gradient-to-r from-accent1 to-accent2 rounded-xl text-white font-semibold text-base shadow-glow hover:scale-105 transition">
+          Furahia OFA hii Sasa
         </button>
       </div>
 
-      <div class="bg-maxbg/60 rounded-2xl p-4 text-center shadow-glow hover:scale-105 transition">
-        <h3 class="text-base sm:text-lg font-semibold">🗓️ Kifurushi cha Mwezi</h3>
-        <p class="text-2xl sm:text-3xl font-extrabold text-accent2 mt-2">TSH 5,000</p>
-        <button class="mt-3 w-full py-2 bg-gradient-to-r from-accent1 to-accent2 rounded-xl text-white font-semibold text-sm sm:text-base shadow-glow hover:scale-105 transition">
-         Furahia OFA hii Sasa 
+      <div class="bg-maxbg/60 rounded-2xl p-5 text-center shadow-glow hover:scale-105 transition-transform duration-200">
+        <h3 class="text-lg sm:text-xl font-semibold">🗓️ Kifurushi cha Mwezi</h3>
+        <p class="text-3xl sm:text-4xl font-extrabold text-accent2 mt-3">TSH 5,000</p>
+        <button class="mt-4 w-full py-2.5 bg-gradient-to-r from-accent1 to-accent2 rounded-xl text-white font-semibold text-base shadow-glow hover:scale-105 transition">
+          Furahia OFA hii Sasa
         </button>
       </div>
     </div>
 
     <!-- Payment Info -->
-    <div class="mt-8 bg-maxbg/40 rounded-2xl p-5 sm:p-6">
-      <h3 class="text-base sm:text-lg font-bold mb-3 text-accent1">📱 Lipa Kupitia Vodacom M-Pesa</h3>
-      <p class="text-xs sm:text-sm leading-relaxed">
+    <div class="mt-10 bg-maxbg/40 rounded-2xl p-5 sm:p-6">
+      <h3 class="text-lg sm:text-xl font-bold mb-4 text-accent1">📱 Lipa Kupitia Vodacom M-Pesa</h3>
+      <p class="text-sm sm:text-base leading-relaxed">
         <span class="font-semibold">Namba:</span>
-        <span id="payNumber" class="text-accent2 text-base sm:text-lg font-bold">0746956012</span><br />
+        <span id="payNumber" class="text-accent2 text-lg sm:text-xl font-bold">0746956012</span><br />
         <span class="font-semibold">Jina:</span> AHADI MWAMONDO
       </p>
 
-      <button id="copyBtn" class="mt-4 w-full py-2 rounded-xl bg-gradient-to-r from-accent1 to-accent2 hover:scale-105 transition font-semibold text-xs sm:text-sm shadow-glow">
+      <button id="copyBtn"
+        class="mt-5 w-full py-2.5 rounded-xl bg-gradient-to-r from-accent1 to-accent2 hover:scale-105 transition font-semibold text-sm sm:text-base shadow-glow">
         📋 Copy Namba ya Malipo
       </button>
-      <p id="copiedMsg" class="hidden text-center text-green-400 text-xs sm:text-sm mt-2">✅ Namba imekopiwa!</p>
+      <p id="copiedMsg" class="hidden text-center text-green-400 text-sm sm:text-base mt-3">
+        ✅ Namba imekopiwa!
+      </p>
     </div>
 
     <!-- Steps -->
-    <div class="mt-6 text-xs sm:text-sm text-gray-300 bg-card/50 rounded-2xl p-4 leading-relaxed">
-      <h4 class="text-accent2 font-semibold mb-2">📝 Jinsi ya Kulipa kwa M-Pesa</h4>
-      <ol class="list-decimal ml-5 space-y-1">
+    <div class="mt-8 text-sm sm:text-base text-gray-300 bg-card/50 rounded-2xl p-5 leading-relaxed">
+      <h4 class="text-accent2 font-semibold mb-3">📝 Jinsi ya Kulipa kwa M-Pesa</h4>
+      <ol class="list-decimal ml-6 space-y-1">
         <li>Piga *150*00#</li>
         <li>Chagua 1 - “Send Money”</li>
         <li>Weka namba hii: <span class="text-accent2 font-semibold">0746956012</span></li>
@@ -108,10 +147,17 @@
     </div>
 
     <!-- Footer -->
-    <div class="mt-8 text-center text-[11px] sm:text-xs text-gray-400">
+    <div class="mt-8 text-center text-xs sm:text-sm text-gray-400">
       © 2025 <span class="text-accent2">Soka TV Max</span> — Burudani Bila Kizuizi ⚡
     </div>
   </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/255746956012" class="whatsapp-float" target="_blank" title="Tuma Ujumbe WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-8 h-8" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.78 11.78 0 0 0 12 0C5.38 0 .05 5.33.05 11.91a11.85 11.85 0 0 0 1.68 6.07L0 24l6.22-1.63A11.94 11.94 0 0 0 12 23.83h.01c6.62 0 11.95-5.33 11.95-11.91a11.85 11.85 0 0 0-3.44-8.44ZM12 21.43a9.6 9.6 0 0 1-4.9-1.33l-.35-.2-3.68.96.98-3.58-.23-.37A9.45 9.45 0 0 1 2.4 11.9C2.4 6.58 6.67 2.3 12 2.3c2.52 0 4.89.98 6.67 2.76a9.53 9.53 0 0 1 2.81 6.85c0 5.32-4.28 9.52-9.48 9.52ZM17 14.93c-.28-.14-1.63-.8-1.88-.9s-.44-.14-.63.14-.72.9-.88 1.09-.33.21-.61.07a7.8 7.8 0 0 1-2.3-1.42 8.63 8.63 0 0 1-1.59-1.96c-.17-.28 0-.43.13-.57.13-.13.28-.33.42-.49.14-.16.19-.28.29-.47.1-.19.05-.36-.02-.5-.07-.14-.63-1.52-.87-2.08-.23-.55-.47-.47-.63-.48h-.54a1.02 1.02 0 0 0-.74.35c-.26.28-.98.96-.98 2.35s1 2.72 1.14 2.91c.14.19 1.95 2.96 4.7 4.15 2.75 1.19 2.75.8 3.25.76.5-.04 1.63-.67 1.86-1.31.23-.64.23-1.19.16-1.31-.07-.12-.26-.19-.54-.33Z"/>
+    </svg>
+  </a>
 
   <script>
     const copyBtn = document.getElementById("copyBtn");
@@ -124,9 +170,10 @@
       copyBtn.textContent = "✅ Imenakiliwa!";
       setTimeout(() => {
         copiedMsg.classList.add("hidden");
-        copyBtn.textContent = "📋 Nakili Namba ya Malipo";
+        copyBtn.textContent = "📋 Copy Namba ya Malipo";
       }, 2000);
     };
   </script>
+
 </body>
 </html>
